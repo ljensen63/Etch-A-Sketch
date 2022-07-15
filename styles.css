@@ -1,0 +1,19 @@
+.header{
+    display:flex;
+    
+}
+
+button{
+    margin-left: auto;
+}
+
+.grid-space{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cell{
+    min-height: 10px;
+    min-width: 10px;
+    border: 2px solid black;
+}
