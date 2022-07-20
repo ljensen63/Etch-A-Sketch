@@ -10,10 +10,10 @@ button{
 .grid-space{
     display: flex;
     flex-wrap: wrap;
+    flex-grow: 1;
+    border: 2px solid black;
 }
 
 .cell{
-    min-height: 10px;
-    min-width: 10px;
-    border: 2px solid black;
+    flex-grow: 1;
 }
