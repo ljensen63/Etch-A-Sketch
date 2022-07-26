@@ -13,9 +13,8 @@ button{
     margin-left: auto;
 }
 
-.grid-space{
-    display: flex;
-    flex-wrap: wrap;
+.grid-container{
+    display: grid;
     border: 2px solid black;
     flex: 1;
 }

@@ -1,31 +1,53 @@
-const gridSpace = document.querySelector('.grid-space');
-console.log(gridSpace);
-for (let i = 0; i < 256; i++){
+const gridContainer = document.querySelector('.grid-container');
+//console.log(grid);
+/*for (let i = 0; i < 256; i++){
     let gridSquare = document.createElement('div');
     gridSquare.classList.add('cell');
     gridSquare.style.minHeight = '10px';
     gridSquare.style.minWidth = '10px';
-    console.log(gridSpace.style.maxWidth);
-    gridSpace.appendChild(gridSquare);
+    console.log(grid.style.maxWidth);
+    //gridSpace.appendChild(gridSquare);
+    grid.appendChild(gridSquare)
 
-}
+}*/
+newGrid(16);
 //given the container & new size for the grid we remove the container and then replace it with new grid container
-function replace(gridSpace){
-    let newSize = prompt('Please enter new size of grid');
-    console.log(newSize);
-    document.body.removeChild(gridSpace);
+function newGrid(gridSize){
+    if (gridSize > 100){
+        gridSize = 100;
+    }
+    for(let i = 0; i < (gridSize * gridSize); i++){
+        let gridCell = document.createElement('div');
+        gridContainer.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
+        gridContainer.style.gridTemplateRows = `repeat(${gridSize}, 1fr)`;
+        gridContainer.insertAdjacentElement('beforeend', gridCell);
+    }
+    /*
+    //console.log(newSize);
+    //console.log(document.body.childNodes);
+    let gridSpace2 = document.querySelector('.grid-space')
+    gridSpace2.removeChild(gridSpace);
     gridSpace = document.createElement('div');
-    gridSpace.classList.add('grid-space');
+    gridSpace.classList.add('grid');
     gridSpace.style.border = '2px solid black'
     document.body.appendChild(gridSpace);
-    for(let k = 0; k < newSize * newSize;k++){
-        let gridSquare = document.createElement('div');
-        gridSquare.classList.add('cell');
-        gridSquare.style.minHeight = '10px';
-        gridSquare.style.minWidth = '10px';
-        gridSpace.appendChild(gridSquare);
-    } 
+    for(let k = 0; k < newSize;k++){
+        for (let a = 0; a < newSize; a++){
+            let gridSquare = document.createElement('div');
+            gridSquare.classList.add('cell');
+            gridSquare.style.minHeight = '10px';
+            gridSquare.style.minWidth = '10px';
+            gridSpace.appendChild(gridSquare);
+        }
+        let breaker = document.createElement('br');
+        gridSpace.appendChild(breaker);
+    } */
+
 }
 
-let newGrid = document.querySelector('.new-Grid');
-newGrid.addEventListener('click', replace(gridSpace));
+let newGridButton = document.querySelector('.new-Grid');
+newGridButton.addEventListener('click', () => {
+    let gridsize = prompt('New Grid Size?')
+    //need to figure out why DOM doesn't have the grid as a child of the grid-space when it is getting removed
+    newGrid(gridsize);
+});
