@@ -16,12 +16,14 @@ button{
 .grid-container{
     display: grid;
     border: 2px solid black;
-    flex: 1;
+    box-sizing: border-box;
 }
 
-.cell{
-    flex: 1
+.grid-container > * {
+    height: 100%;
+    width: 100%;
 }
+
 
 .color-Buttons{
     margin: 0 auto;

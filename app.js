@@ -10,9 +10,11 @@ const gridContainer = document.querySelector('.grid-container');
     grid.appendChild(gridSquare)
 
 }*/
-newGrid(16);
+
 //given the container & new size for the grid we remove the container and then replace it with new grid container
 function newGrid(gridSize){
+    let cells = gridContainer.querySelectorAll('div');
+    cells.forEach(cells => cells.remove()); 
     if (gridSize > 100){
         gridSize = 100;
     }
@@ -51,3 +53,5 @@ newGridButton.addEventListener('click', () => {
     //need to figure out why DOM doesn't have the grid as a child of the grid-space when it is getting removed
     newGrid(gridsize);
 });
+
+newGrid(16);
