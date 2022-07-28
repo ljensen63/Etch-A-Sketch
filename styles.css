@@ -9,6 +9,10 @@ body{
     
 }
 
+.header > h2 {
+    justify-content: center;
+}
+
 button{
     margin-left: auto;
 }
@@ -16,11 +20,13 @@ button{
 .grid-container{
     display: grid;
     border: 2px solid black;
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
 }
 
-.grid-container > * {
-   min-height: 10px;
-   min-width: 10px;
+.grid-container > div {
+   align-items: stretch;
 }
 
 
@@ -28,42 +34,20 @@ button{
     margin: 0 auto;
 }
 
-.red2:hover{
-    background-color: red;
-}
-
-.green2:hover{
-    background-color: green;
-}
-
-.blue2:hover{
-    background-color: blue;
-}
-
 .red{
-   
-    color: white;
-}
-
-.red:hover{
     background-color: red;
+    color: white;
 }
 
 .green{
-    
+    background-color: green;
     color: white;
 }
 
-.green:hover{
-    background-color: green;
-}
 
 .blue{
-    
+    background-color: blue;
     color: white;
 }
 
-.blue:hover{
-    background-color: blue;
-}
 
