@@ -1,15 +1,11 @@
 const gridContainer = document.querySelector('.grid-container');
-//console.log(grid);
-/*for (let i = 0; i < 256; i++){
-    let gridSquare = document.createElement('div');
-    gridSquare.classList.add('cell');
-    gridSquare.style.minHeight = '10px';
-    gridSquare.style.minWidth = '10px';
-    console.log(grid.style.maxWidth);
-    //gridSpace.appendChild(gridSquare);
-    grid.appendChild(gridSquare)
-
-}*/
+const colorButtonsContainer = document.querySelector('.color-Buttons');
+const colorButtons = colorButtonsContainer.querySelectorAll('button');
+let currentColor;
+colorButtons.forEach(colorButtons => colorButtons.addEventListener('click', () => {
+    currentColor = colorButtons.classList[0];
+}));
+//let currentColor = 
 
 //given the container & new size for the grid we remove the container and then replace it with new grid container
 function newGrid(gridSize){
@@ -24,6 +20,8 @@ function newGrid(gridSize){
         gridContainer.style.gridTemplateRows = `repeat(${gridSize}, 1fr)`;
         gridContainer.insertAdjacentElement('beforeend', gridCell);
     }
+    cells = gridContainer.querySelectorAll('div');
+    cells.forEach(cells => cells.addEventListener('mouseover', () => { addColor()}));
     /*
     //console.log(newSize);
     //console.log(document.body.childNodes);
@@ -45,6 +43,11 @@ function newGrid(gridSize){
         gridSpace.appendChild(breaker);
     } */
 
+}
+
+function addColor(){
+    let cells = gridContainer.querySelectorAll('div');
+    cells.forEach(cells => cells.classList.add(currentColor));
 }
 
 let newGridButton = document.querySelector('.new-Grid');

@@ -16,12 +16,11 @@ button{
 .grid-container{
     display: grid;
     border: 2px solid black;
-    box-sizing: border-box;
 }
 
 .grid-container > * {
-    height: 100%;
-    width: 100%;
+   min-height: 10px;
+   min-width: 10px;
 }
 
 
@@ -29,18 +28,42 @@ button{
     margin: 0 auto;
 }
 
-.red{
+.red2:hover{
     background-color: red;
+}
+
+.green2:hover{
+    background-color: green;
+}
+
+.blue2:hover{
+    background-color: blue;
+}
+
+.red{
+   
     color: white;
+}
+
+.red:hover{
+    background-color: red;
 }
 
 .green{
-    background-color: green;
+    
     color: white;
 }
 
+.green:hover{
+    background-color: green;
+}
+
 .blue{
-    background-color: blue;
+    
     color: white;
+}
+
+.blue:hover{
+    background-color: blue;
 }
 
